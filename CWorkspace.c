@@ -25,11 +25,11 @@ int main(){
 
 void create_random_array(int first_val, int second_val, int range){
   int rand_array[range];
-  for (int i = 1; i < range; i++){
+  for (int i = 0; i < range; i++){
     rand_array[i] = (rand() % (first_val - second_val + 1)) + first_val;
   };
 
-  for (int x = 1; x < range; x++){
+  for (int x = 0; x < range; x++){
     printf("Array index: %d, and the value is: %d\n", x, rand_array[x]);
   };
 }
