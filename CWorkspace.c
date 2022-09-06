@@ -18,21 +18,27 @@ int main(){
   t0 = clock() - t0;
   printf("Delta time: %ld milliseconds\n", t0 / 1000);
 
-  create_random_array(-10, 50, 100);
+  create_random_array(-10, 80, 100);
 
   return 0;
 };
 
 void create_random_array(int first_val, int second_val, int range){
-  int rand_array[range];
-  for (int i = 0; i < range; i++){
-    rand_array[i] = (rand() % (first_val - second_val + 1)) + first_val;
-  };
 
-  for (int x = 0; x < range; x++){
-    printf("Array index: %d, and the value is: %d\n", x, rand_array[x]);
-  };
-}
+    int rand_array[range];
+    for (int i = 0; i < range; i++){
+      rand_array[i] = (rand() % (first_val - second_val + 1)) + first_val;
+    };
+    for (int x = 0; x < range; x++){
+      if(x==range-1){
+        printf("%d\n", rand_array[x]);
+      }
+      else {
+        printf("%d, ",rand_array[x]);
+      }
+    };
+
+};
 
 time_t get_time(){
   time_t seconds;
