@@ -4,19 +4,42 @@
 
 time_t get_time();
 void create_random_array(int first_val, int second_val, int range);
+void guess_number();
 
 int main(){
+  srand(time(NULL));
   clock_t t0;
   clock_t t1;
   clock_t delta_time;
   double res;
 
   t0 = clock();
-  create_random_array(-10, 80, 10000);  
+  guess_number();
   t0 = clock() - t0;
   printf("Delta time: %ld milliseconds\n", t0 / 1000);
 
   return 0;
+};
+
+void guess_number(){
+  int NUMBER;
+  int CURRENT_GUESS;
+  CURRENT_GUESS=0;
+  NUMBER = rand()%100;
+  while(NUMBER!=CURRENT_GUESS){
+    printf("Guess a number: ");
+    scanf("%d", &CURRENT_GUESS);
+    if(CURRENT_GUESS<NUMBER){
+      printf("Guess a larger number!\n");
+    }
+    else if(CURRENT_GUESS>NUMBER){
+      printf("Guess a smaller number!\n");
+    }
+    else{
+      printf("Congratulations!, number was: %d\n", NUMBER);
+      break;
+    }
+  }
 };
 
 void create_random_array(int first_val, int second_val, int range){
