@@ -5,6 +5,7 @@
 time_t get_time();
 void create_random_array(int first_val, int second_val, int range);
 void guess_number();
+void hangman();
 
 int main(){
   srand(time(NULL));
@@ -20,6 +21,10 @@ int main(){
 
   return 0;
 };
+
+void hangman(){
+  
+}
 
 void guess_number(){
   int NUMBER;
