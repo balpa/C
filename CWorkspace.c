@@ -6,6 +6,7 @@ time_t get_time();
 void create_random_array(int first_val, int second_val, int range);
 void guess_number();
 void hangman();
+void draw_pyramid(int base, int height);
 
 int main(){
   srand(time(NULL));
@@ -22,6 +23,18 @@ int main(){
   return 0;
 };
 
+void draw_pyramid(int base, int height){
+  char PT = "%";
+  char DL = "$";
+  int BACKING_VAL;
+  BACKING_VAL = base/2;
+
+  for(int i=0; i<(height-(height/4)); i++){
+    continue;
+  }
+
+}
+
 void hangman(){
   
 }
@@ -36,11 +49,9 @@ void guess_number(){
     scanf("%d", &CURRENT_GUESS);
     if(CURRENT_GUESS<NUMBER){
       printf("Guess a larger number!\n");
-    }
-    else if(CURRENT_GUESS>NUMBER){
+    }else if(CURRENT_GUESS>NUMBER){
       printf("Guess a smaller number!\n");
-    }
-    else{
+    }else{
       printf("Congratulations!, number was: %d\n", NUMBER);
       break;
     }
@@ -56,8 +67,7 @@ void create_random_array(int first_val, int second_val, int range){
   for (int x = 0; x < range; x++){
     if(x==range-1){
       printf("%d\n", rand_array[x]);
-    }
-    else {
+    }else{
       printf("%d, ",rand_array[x]);
     }
   };
