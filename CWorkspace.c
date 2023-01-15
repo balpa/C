@@ -28,29 +28,29 @@ int main(){
 void RPS(){
   int PC_SCORE;
   int USER_SCORE;
-  PC_SCORE=0;
-  USER_SCORE=0;
+  PC_SCORE = 0;
+  USER_SCORE = 0;
   bool run;
   run = true;
   //cannot fix the warning
   char options [3][10] = {"rock", "scissors", "paper"};
-  printf("%s\n", options[rand()%3]);
+  printf("%s\n", options[rand() % 3]);
 
-  while(run){
+  while (run){
     char current_pc;
     char current_user[15];
-    current_pc = options[rand()%3];
+    current_pc = options[rand() % 3];
     printf("Enter: ");
     scanf("%s", &current_user);
-    if(current_user==current_pc){
+    if (current_user == current_pc){
       printf("Draw! Go again.");
-    }else if(current_user=="rock"&&current_pc=="scissors"){
+    } else if (current_user == "rock" && current_pc == "scissors"){
       printf("You won! One point!");
       USER_SCORE++;
-    }else if(current_user=="rock"&&current_pc=="paper"){
+    } else if (current_user == "rock" && current_pc == "paper"){
       printf("You lost! Go again.");
       PC_SCORE++;
-    }else{continue;}
+    } else {continue;}
   }
 
 }
@@ -59,9 +59,9 @@ void draw_pyramid(int base, int height){
   char PT = "%";
   char DL = "$";
   int BACKING_VAL;
-  BACKING_VAL = base/2;
+  BACKING_VAL = base / 2;
 
-  for(int i=0; i<(height-(height/4)); i++){
+  for(int i = 0; i < (height - (height / 4)); i++){
     continue;
   }
 
@@ -74,16 +74,16 @@ void hangman(){
 void guess_number(){
   int NUMBER;
   int CURRENT_GUESS;
-  CURRENT_GUESS=0;
-  NUMBER = rand()%100;
-  while(NUMBER!=CURRENT_GUESS){
+  CURRENT_GUESS = 0;
+  NUMBER = rand() % 100;
+  while (NUMBER != CURRENT_GUESS){
     printf("Guess a number: ");
     scanf("%d", &CURRENT_GUESS);
-    if(CURRENT_GUESS<NUMBER){
+    if (CURRENT_GUESS < NUMBER){
       printf("Guess a larger number!\n");
-    }else if(CURRENT_GUESS>NUMBER){
+    } else if (CURRENT_GUESS > NUMBER){
       printf("Guess a smaller number!\n");
-    }else{
+    } else {
       printf("Congratulations!, number was: %d\n", NUMBER);
       break;
     }
@@ -97,7 +97,7 @@ void create_random_array(int first_val, int second_val, int range){
     rand_array[i] = (rand() % (first_val - second_val + 1)) + first_val;
   };
   for (int x = 0; x < range; x++){
-    if(x==range-1){
+    if(x == range - 1){
       printf("%d\n", rand_array[x]);
     }else{
       printf("%d, ",rand_array[x]);
